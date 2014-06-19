@@ -57,9 +57,10 @@ INSERT INTO payments (created_at, amount, payer_name, recipient_name, descriptio
 -- You receive notice that the payment with id of 9 is $10 too low.
 -- Alter that row so that it is corrected
 UPDATE payments SET amount = 460 WHERE id = 9;
+--UPDATE payments SET amount = amount + 10 Where id = 9;
 
 -- Delete all payments with an amount under $2
-
+DELETE FROM payments WHERE amount < 2;
 
 -- Select all entries from the payments table
 SELECT * FROM payments;
