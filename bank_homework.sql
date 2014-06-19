@@ -71,11 +71,9 @@ SELECT * FROM payments ORDER BY amount DESC;
 SELECT DISTINCT payer_name FROM payments;
 
 -- In a single query, select all payments created in the past week
-SELECT DISTINCT payer_name FROM payments WHERE description IS NULL;
-
 SELECT * FROM payments WHERE created_at > (CURRENT_TIMESTAMP - interval '7 days');
 -- In a single query, select all payments with a blank description
 
-SELECT description FROM payments WHERE description IS NULL;
+SELECT DISTINCT payer_name FROM payments WHERE description IS NULL;
 -- In a single query, select all payments matching the name of one of the payers (choose any single one)
 SELECT * FROM payments WHERE payer_name = 'Nick';
